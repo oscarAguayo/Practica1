@@ -1,0 +1,21 @@
+Para ignorar archivos en git, se necesita crear un archivo llamado .gitignore en la raiz de tu proyecto.
+
+Este archivo devera contener todos aquellos archivos, directorios o extensiones que deseas que Git evite subir a tu repositorio.
+
+uedes indicar un directorio añadiendo una barra hacia delante (/) al final. Puedes negar un patrón añadiendo una exclamación (!) al principio. Las reglas para los patrones que pueden ser incluidos en el archivo .gitignore son: Las líneas en blanco, o que comienzan por #, son ignoradas.
+
+Puedes usar patrones glob estándar. Los patrones glob son expresiones regulares simplificadas que pueden ser usadas por las shells. Un asterisco (*) reconoce cero o más caracteres; [abc] reconoce cualquier carácter de los especificados entre corchetes (en este caso, a, b, o c); una interrogación (?) reconoce un único carácter; y caracteres entre corchetes separados por un guión ([0-9]) reconoce cualquier carácter entre ellos (en este caso, de 0 a 9).
+
+Un archivo .gitignore se veria algo asi:
+
+# a comment – this is ignored
+# no .a files
+*.a
+# but do track lib.a, even though you're ignoring .a files above
+!lib.a
+# only ignore the root TODO file, not subdir/TODO
+/TODO
+# ignore all files in the build/ directory
+build/
+# ignore doc/notes.txt, but not doc/server/arch.txt
+doc/*.txt
